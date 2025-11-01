@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Önemli Uyarı</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            overflow: hidden;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .warning-phase {
+            background: linear-gradient(135deg, #ff0000 0%, #8b0000 100%);
+            padding: 60px 40px;
+            text-align: center;
+            color: white;
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .warning-phase .icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: shake 0.5s ease-in-out infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .warning-phase h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .warning-phase p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .education-phase {
+            display: none;
+            padding: 50px 40px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .education-phase .icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        .education-phase h1 {
+            color: #2ecc71;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        .education-phase .message {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .tips {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .tips h2 {
+            color: #e74c3c;
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tips ul {
+            list-style: none;
+        }
+
+        .tips li {
+            padding: 15px 0;
+            border-bottom: 1px solid #dee2e6;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .tips li:last-child {
+            border-bottom: none;
+        }
+
+        .tips li::before {
+            content: "⚠️";
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .footer {
+            background: #34495e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #ffeb3b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="warning-phase" id="warningPhase">
+            <div class="icon">⚠️</div>
+            <h1>DOLANDIRILDNIZ!</h1>
+            <p style="font-size: 20px; margin-bottom: 25px;">
+                Telefonunuzdaki bütün bilgiler, banka hesabınız, fotoğraflar ve rehberdeki tüm kişiler, sosyal medya hesaplarınızın şifresi artık elimizde.
+            </p>
+            <p style="font-size: 22px; font-weight: bold;">
+                GEÇMİŞ OLSUN!
+            </p>
+            <div class="countdown" id="countdown">10</div>
+        </div>
+
+        <div class="education-phase" id="educationPhase">
+            <div class="icon">✅</div>
+            <h1>Bu Sadece Bir Eğitim Uyarısıydı!</h1>
+            <div class="message">
+                <p style="margin-bottom: 15px;">
+                    <strong>Endişelenmeyin, bu gerçek değildi.</strong> Ama dikkat edin: gerçek bir dolandırıcılık linki de olabilirdi!
+                </p>
+                <p style="margin-bottom: 15px;">
+                    Dün ailemize gelen mesajlar gibi, bu tür dolandırıcılık girişimleri her gün binlerce kişiyi mağdur ediyor. Bir linke tıklamak, tüm hayatınızı alt üst edebilir.
+                </p>
+                <p style="font-weight: bold; color: #e74c3c; font-size: 20px;">
+                    Gerçek bir saldırının geri dönüşü olmayabilirdi!
+                </p>
+            </div>
+
+            <div class="tips">
+                <h2>🛡️ Kendinizi Nasıl Korursunuz?</h2>
+                <ul>
+                    <li>
+                        <span><strong>Tanımadığınız numaralardan gelen linklere asla tıklamayın.</strong> Mesaj tanıdık birinden geliyormuş gibi görünse bile önce telefon ile arayarak doğrulayın.</span>
+                    </li>
+                    <li>
+                        <span><strong>Acil durum yaratmaya çalışan mesajlara dikkat edin.</strong> "Acele et", "şimdi tıkla", "hesabın kapatılacak" gibi ifadeler dolandırıcılık işaretidir.</span>
+                    </li>
+                    <li>
+                        <span><strong>Link görünce duraksamadan önce düşünün:</strong> Bu mesajı ben mi istedim? Gönderen gerçekten bu kişi mi? Mantıklı mı?</span>
+                    </li>
+                    <li>
+                        <span><strong>Şüphelendiğiniz mesajları ailenizdeki diğer kişilerle paylaşın.</strong> Birlikte farkındalık yaratın.</span>
+                    </li>
+                    <li>
+                        <span><strong>Telefonunuza güvenlik uygulaması yükleyin</strong> ve işletim sisteminizi güncel tutun.</span>
+                    </li>
+                    <li>
+                        <span><strong>Banka ve önemli hesaplarınızda iki faktörlü doğrulama açın.</strong> Bu, sizi çok daha güvende tutar.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>💙 Sevdiklerinizi korumak için bu sayfayı paylaşın</p>
+            <p style="margin-top: 10px; font-size: 12px;">Güvenliğiniz bizim için önemli - Bilinçli olun, güvende kalın</p>
+        </div>
+    </div>
+
+    <script>
+        let countdown = 10;
+        const countdownEl = document.getElementById('countdown');
+        const warningPhase = document.getElementById('warningPhase');
+        const educationPhase = document.getElementById('educationPhase');
+
+        const timer = setInterval(() => {
+            countdown--;
+            countdownEl.textContent = countdown;
+            
+            if (countdown <= 0) {
+                clearInterval(timer);
+                warningPhase.style.display = 'none';
+                educationPhase.style.display = 'block';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
