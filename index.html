@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Önemli Uyarı</title>
+    <title>Güvenlik Uyarısı</title>
     <style>
         * {
             margin: 0;
@@ -12,31 +12,31 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
             padding: 20px;
             overflow: hidden;
         }
 
         .container {
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            max-width: 600px;
+            border-radius: 24px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+            max-width: 700px;
             width: 100%;
             overflow: hidden;
-            animation: slideIn 0.5s ease-out;
+            animation: slideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
             position: relative;
         }
 
         @keyframes slideIn {
             from {
                 opacity: 0;
-                transform: translateY(-50px) scale(0.9);
+                transform: translateY(-60px) scale(0.9);
             }
             to {
                 opacity: 1;
@@ -45,21 +45,21 @@
         }
 
         .warning-phase {
-            background: linear-gradient(135deg, #ff0000 0%, #8b0000 100%);
-            padding: 50px 40px;
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            padding: 60px 50px;
             text-align: center;
             color: white;
             position: relative;
-            animation: backgroundPulse 2s ease-in-out infinite;
+            animation: backgroundPulse 2.5s ease-in-out infinite;
             overflow: hidden;
         }
 
         @keyframes backgroundPulse {
             0%, 100% { 
-                background: linear-gradient(135deg, #ff0000 0%, #8b0000 100%);
+                background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
             }
             50% { 
-                background: linear-gradient(135deg, #cc0000 0%, #660000 100%);
+                background: linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
             }
         }
 
@@ -73,11 +73,11 @@
             background: repeating-linear-gradient(
                 45deg,
                 transparent,
-                transparent 10px,
-                rgba(255, 255, 255, 0.05) 10px,
-                rgba(255, 255, 255, 0.05) 20px
+                transparent 15px,
+                rgba(255, 255, 255, 0.03) 15px,
+                rgba(255, 255, 255, 0.03) 30px
             );
-            animation: moveStripes 20s linear infinite;
+            animation: moveStripes 25s linear infinite;
         }
 
         @keyframes moveStripes {
@@ -91,63 +91,65 @@
         }
 
         .warning-phase .icon {
-            font-size: 100px;
-            margin-bottom: 20px;
-            animation: shakeRotate 0.8s ease-in-out infinite;
+            font-size: 110px;
+            margin-bottom: 25px;
+            animation: dangerPulse 1s ease-in-out infinite;
             display: inline-block;
-            filter: drop-shadow(0 0 20px rgba(255, 255, 0, 0.8));
+            filter: drop-shadow(0 0 30px rgba(255, 193, 7, 0.9));
         }
 
-        @keyframes shakeRotate {
+        @keyframes dangerPulse {
             0%, 100% { 
-                transform: translateX(0) rotate(0deg) scale(1);
+                transform: scale(1) rotate(0deg);
             }
             25% { 
-                transform: translateX(-15px) rotate(-10deg) scale(1.1);
+                transform: scale(1.15) rotate(-8deg);
             }
             75% { 
-                transform: translateX(15px) rotate(10deg) scale(1.1);
+                transform: scale(1.15) rotate(8deg);
             }
         }
 
         .warning-phase h1 {
-            font-size: 42px;
-            margin-bottom: 25px;
-            font-weight: bold;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-            animation: glitchText 3s ease-in-out infinite;
-            letter-spacing: 3px;
+            font-size: 48px;
+            margin-bottom: 30px;
+            font-weight: 800;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.6);
+            animation: glitchText 4s ease-in-out infinite;
+            letter-spacing: 4px;
+            text-transform: uppercase;
         }
 
         @keyframes glitchText {
-            0%, 90%, 100% {
+            0%, 88%, 100% {
                 transform: translate(0);
-                text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+                text-shadow: 4px 4px 8px rgba(0,0,0,0.6);
+            }
+            90% {
+                transform: translate(-4px, 3px);
+                text-shadow: 4px 4px 8px rgba(255,0,0,0.9), -4px -4px 8px rgba(0,255,255,0.9);
             }
             92% {
-                transform: translate(-3px, 2px);
-                text-shadow: 3px 3px 6px rgba(255,0,0,0.8), -3px -3px 6px rgba(0,255,255,0.8);
+                transform: translate(3px, -3px);
+                text-shadow: -4px -4px 8px rgba(255,0,0,0.9), 4px 4px 8px rgba(0,255,255,0.9);
             }
             94% {
-                transform: translate(2px, -2px);
-                text-shadow: -3px -3px 6px rgba(255,0,0,0.8), 3px 3px 6px rgba(0,255,255,0.8);
-            }
-            96% {
                 transform: translate(0);
-                text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+                text-shadow: 4px 4px 8px rgba(0,0,0,0.6);
             }
         }
 
         .warning-phase p {
-            font-size: 19px;
-            line-height: 1.6;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            animation: fadeInOut 2s ease-in-out infinite;
+            font-size: 20px;
+            line-height: 1.7;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+            animation: fadeInOut 2.5s ease-in-out infinite;
+            font-weight: 500;
         }
 
         @keyframes fadeInOut {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+            50% { opacity: 0.8; }
         }
 
         .danger-border {
@@ -156,34 +158,36 @@
             left: 0;
             right: 0;
             bottom: 0;
-            border: 5px solid #ffeb3b;
-            animation: borderBlink 1s ease-in-out infinite;
+            border: 6px solid #fbbf24;
+            animation: borderBlink 1.2s ease-in-out infinite;
             z-index: 3;
             pointer-events: none;
+            border-radius: 24px;
         }
 
         @keyframes borderBlink {
             0%, 100% { 
-                border-color: #ffeb3b;
-                box-shadow: inset 0 0 30px rgba(255, 235, 59, 0.5);
+                border-color: #fbbf24;
+                box-shadow: inset 0 0 40px rgba(251, 191, 36, 0.6);
             }
             50% { 
-                border-color: #ff0000;
-                box-shadow: inset 0 0 30px rgba(255, 0, 0, 0.5);
+                border-color: #dc2626;
+                box-shadow: inset 0 0 40px rgba(220, 38, 38, 0.6);
             }
         }
 
         .education-phase {
             display: none;
-            padding: 50px 40px;
+            padding: 60px 50px;
             text-align: center;
-            animation: fadeInScale 1s ease-out;
+            animation: fadeInScale 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: linear-gradient(to bottom, #ffffff 0%, #f9fafb 100%);
         }
 
         @keyframes fadeInScale {
             from { 
                 opacity: 0;
-                transform: scale(0.8);
+                transform: scale(0.85);
             }
             to { 
                 opacity: 1;
@@ -192,19 +196,22 @@
         }
 
         .education-phase .icon {
-            font-size: 100px;
-            margin-bottom: 20px;
-            animation: bounceIn 1s ease-out;
+            font-size: 120px;
+            margin-bottom: 25px;
+            animation: successBounce 1.2s ease-out;
             display: inline-block;
         }
 
-        @keyframes bounceIn {
+        @keyframes successBounce {
             0% {
                 transform: scale(0);
                 opacity: 0;
             }
             50% {
-                transform: scale(1.2);
+                transform: scale(1.3);
+            }
+            70% {
+                transform: scale(0.9);
             }
             100% {
                 transform: scale(1);
@@ -213,35 +220,17 @@
         }
 
         .education-phase h1 {
-            color: #2ecc71;
-            font-size: 36px;
-            margin-bottom: 25px;
-            animation: slideFromLeft 0.8s ease-out;
-        }
-
-        @keyframes slideFromLeft {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        .education-phase .message {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #333;
+            color: #059669;
+            font-size: 40px;
             margin-bottom: 30px;
-            text-align: left;
-            animation: fadeInUp 1s ease-out 0.3s both;
+            font-weight: 700;
+            animation: slideFromTop 1s ease-out;
+            line-height: 1.3;
         }
 
-        @keyframes fadeInUp {
+        @keyframes slideFromTop {
             from {
-                transform: translateY(30px);
+                transform: translateY(-50px);
                 opacity: 0;
             }
             to {
@@ -250,22 +239,94 @@
             }
         }
 
-        .tips {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 30px;
-            margin-top: 30px;
+        .education-phase .message {
+            font-size: 18px;
+            line-height: 1.9;
+            color: #374151;
+            margin-bottom: 35px;
             text-align: left;
-            animation: fadeInUp 1s ease-out 0.6s both;
+            animation: fadeInUp 1.2s ease-out 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .message p {
+            margin-bottom: 18px;
+        }
+
+        .author-box {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-radius: 16px;
+            border: 2px solid #3b82f6;
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+            animation: fadeInUp 1.2s ease-out 0.6s both;
+        }
+
+        .author-box .icon-top {
+            font-size: 40px;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .author-box .label {
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .author-box .name {
+            font-size: 28px;
+            color: #1e40af;
+            font-weight: 800;
+            margin: 15px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .author-box .subtitle {
+            font-size: 16px;
+            color: #4b5563;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .tips {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 35px;
+            text-align: left;
+            animation: fadeInUp 1.2s ease-out 0.8s both;
+            border: 2px solid #e2e8f0;
         }
 
         .tips h2 {
-            color: #e74c3c;
-            font-size: 24px;
-            margin-bottom: 20px;
+            color: #dc2626;
+            font-size: 28px;
+            margin-bottom: 30px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-weight: 700;
         }
 
         .tips ul {
@@ -273,28 +334,29 @@
         }
 
         .tips li {
-            padding: 15px 0;
-            border-bottom: 1px solid #dee2e6;
-            font-size: 16px;
-            line-height: 1.6;
-            color: #555;
+            padding: 20px 0;
+            border-bottom: 2px solid #e5e7eb;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #1f2937;
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 15px;
             opacity: 0;
-            animation: slideInRight 0.5s ease-out forwards;
+            animation: slideInRight 0.6s ease-out forwards;
+            font-weight: 500;
         }
 
-        .tips li:nth-child(1) { animation-delay: 0.8s; }
-        .tips li:nth-child(2) { animation-delay: 1s; }
-        .tips li:nth-child(3) { animation-delay: 1.2s; }
-        .tips li:nth-child(4) { animation-delay: 1.4s; }
+        .tips li:nth-child(1) { animation-delay: 1s; }
+        .tips li:nth-child(2) { animation-delay: 1.15s; }
+        .tips li:nth-child(3) { animation-delay: 1.3s; }
+        .tips li:nth-child(4) { animation-delay: 1.45s; }
         .tips li:nth-child(5) { animation-delay: 1.6s; }
-        .tips li:nth-child(6) { animation-delay: 1.8s; }
+        .tips li:nth-child(6) { animation-delay: 1.75s; }
 
         @keyframes slideInRight {
             from {
-                transform: translateX(-30px);
+                transform: translateX(-40px);
                 opacity: 0;
             }
             to {
@@ -308,42 +370,54 @@
         }
 
         .tips li::before {
-            content: "⚠️";
-            font-size: 20px;
+            content: "🛡️";
+            font-size: 24px;
             flex-shrink: 0;
-            animation: pulse 2s ease-in-out infinite;
+            animation: iconPulse 2.5s ease-in-out infinite;
         }
 
-        @keyframes pulse {
+        @keyframes iconPulse {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
+            50% { transform: scale(1.15); }
         }
 
         .footer {
-            background: #34495e;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: white;
-            padding: 20px;
+            padding: 30px;
             text-align: center;
+            font-size: 15px;
+        }
+
+        .footer p:first-child {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .footer p:last-child {
+            color: #94a3b8;
             font-size: 14px;
         }
 
         .countdown {
-            font-size: 60px;
-            font-weight: bold;
-            margin-top: 30px;
-            color: #ffeb3b;
+            font-size: 72px;
+            font-weight: 900;
+            margin-top: 35px;
+            color: #fbbf24;
             animation: countdownPulse 1s ease-in-out infinite;
-            text-shadow: 0 0 20px rgba(255, 235, 59, 0.8);
+            text-shadow: 0 0 30px rgba(251, 191, 36, 1);
+            font-family: 'Arial Black', sans-serif;
         }
 
         @keyframes countdownPulse {
             0%, 100% { 
                 transform: scale(1);
-                text-shadow: 0 0 20px rgba(255, 235, 59, 0.8);
+                text-shadow: 0 0 30px rgba(251, 191, 36, 1);
             }
             50% { 
-                transform: scale(1.3);
-                text-shadow: 0 0 40px rgba(255, 235, 59, 1);
+                transform: scale(1.4);
+                text-shadow: 0 0 50px rgba(251, 191, 36, 1);
             }
         }
 
@@ -353,9 +427,9 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 0, 0, 0.3);
+            background: rgba(220, 38, 38, 0.4);
             pointer-events: none;
-            animation: flashAlert 0.5s ease-in-out infinite;
+            animation: flashAlert 0.6s ease-in-out infinite;
             z-index: 1;
         }
 
@@ -366,19 +440,58 @@
 
         .hacked-text {
             position: absolute;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.3);
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.25);
             font-family: 'Courier New', monospace;
-            animation: randomMove 10s linear infinite;
+            animation: randomMove 12s linear infinite;
             white-space: nowrap;
+            font-weight: bold;
         }
 
         @keyframes randomMove {
             0% { transform: translate(0, 0); }
-            25% { transform: translate(100px, 50px); }
-            50% { transform: translate(-50px, 100px); }
-            75% { transform: translate(80px, -30px); }
+            25% { transform: translate(120px, 60px); }
+            50% { transform: translate(-60px, 120px); }
+            75% { transform: translate(100px, -40px); }
             100% { transform: translate(0, 0); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 16px;
+            }
+            
+            .warning-phase {
+                padding: 40px 30px;
+            }
+            
+            .warning-phase h1 {
+                font-size: 36px;
+            }
+            
+            .warning-phase .icon {
+                font-size: 80px;
+            }
+            
+            .education-phase {
+                padding: 40px 30px;
+            }
+            
+            .education-phase h1 {
+                font-size: 28px;
+            }
+            
+            .tips {
+                padding: 25px;
+            }
+            
+            .author-box .name {
+                font-size: 22px;
+            }
+            
+            .countdown {
+                font-size: 56px;
+            }
         }
     </style>
 </head>
@@ -389,16 +502,16 @@
         <div class="danger-border"></div>
         
         <div class="warning-phase" id="warningPhase">
-            <div class="hacked-text" style="top: 10%; left: 5%;">HACKED...</div>
-            <div class="hacked-text" style="top: 30%; right: 5%; animation-delay: 2s;">ACCESS DENIED</div>
-            <div class="hacked-text" style="bottom: 20%; left: 10%; animation-delay: 4s;">SYSTEM BREACH</div>
+            <div class="hacked-text" style="top: 8%; left: 5%;">● SYSTEM BREACH</div>
+            <div class="hacked-text" style="top: 25%; right: 8%; animation-delay: 2s;">● ACCESS DENIED</div>
+            <div class="hacked-text" style="bottom: 15%; left: 12%; animation-delay: 4s;">● DATA COMPROMISED</div>
             
             <div class="icon">⚠️</div>
             <h1>DOLANDIRILDNIZ!</h1>
-            <p style="font-size: 20px; margin-bottom: 25px;">
+            <p style="font-size: 21px; margin-bottom: 28px; max-width: 550px; margin-left: auto; margin-right: auto;">
                 Telefonunuzdaki bütün bilgiler, banka hesabınız, fotoğraflar ve rehberdeki tüm kişiler, sosyal medya hesaplarınızın şifresi artık elimizde.
             </p>
-            <p style="font-size: 22px; font-weight: bold;">
+            <p style="font-size: 24px; font-weight: 700;">
                 GEÇMİŞ OLSUN!
             </p>
             <div class="countdown" id="countdown">10</div>
@@ -407,21 +520,24 @@
         <div class="education-phase" id="educationPhase">
             <div class="icon">✅</div>
             <h1>Bu Sadece Bir Eğitim Uyarısıydı!</h1>
+            
             <div class="message">
-                <p style="margin-bottom: 15px;">
-                    <strong>Endişelenmeyin, bu gerçek değildi.</strong> Ama dikkat edin: gerçek bir dolandırıcılık linki de olabilirdi!
+                <p>
+                    <strong style="color: #059669; font-size: 20px;">Endişelenmeyin, bu gerçek değildi.</strong> Ama dikkat edin: gerçek bir dolandırıcılık linki de olabilirdi!
                 </p>
-                <p style="margin-bottom: 15px;">
+                <p>
                     Dün ailemize gelen mesajlar gibi, bu tür dolandırıcılık girişimleri her gün binlerce kişiyi mağdur ediyor. Bir linke tıklamak, tüm hayatınızı alt üst edebilir.
                 </p>
-                <p style="font-weight: bold; color: #e74c3c; font-size: 20px; margin-bottom: 25px;">
-                    Gerçek bir saldırının geri dönüşü olmayabilirdi!
+                <p style="font-weight: 700; color: #dc2626; font-size: 22px; margin-top: 25px;">
+                    ⚡ Gerçek bir saldırının geri dönüşü olmayabilirdi!
                 </p>
-                <p style="text-align: center; font-size: 16px; color: #7f8c8d; margin-top: 30px; padding: 20px; background: #ecf0f1; border-radius: 10px; border-left: 4px solid #3498db;">
-                    💡 <strong>Bu uyarıyı sizin için hazırlayan:</strong><br>
-                    <span style="font-size: 20px; color: #2c3e50; font-weight: bold; margin-top: 10px; display: inline-block;">Nebi Mehmet Alyörük</span><br>
-                    <span style="font-size: 14px; color: #95a5a6;">Sizleri Korumak İçin Küçük Bir Uyarıydı. Paniğe Gerek Yok.</span>
-                </p>
+            </div>
+
+            <div class="author-box">
+                <div class="icon-top">👨‍💻</div>
+                <div class="label">Bu uyarıyı sizin için hazırlayan</div>
+                <div class="name">Nebi Mehmet Alyörük</div>
+                <div class="subtitle">Sizleri Korumak İçin Küçük Bir Uyarıydı.<br>Paniğe Gerek Yok.</div>
             </div>
 
             <div class="tips">
@@ -434,7 +550,7 @@
                         <span><strong>Acil durum yaratmaya çalışan mesajlara dikkat edin.</strong> "Acele et", "şimdi tıkla", "hesabın kapatılacak" gibi ifadeler dolandırıcılık işaretidir.</span>
                     </li>
                     <li>
-                        <span><strong>Link görünce duraksamadan önce düşünün:</strong> Bu mesajı ben mi istedim? Gönderen gerçekten bu kişi mi? Mantıklı mı?</span>
+                        <span><strong>Link görünce duraklamadan önce düşünün:</strong> Bu mesajı ben mi istedim? Gönderen gerçekten bu kişi mi? Mantıklı mı?</span>
                     </li>
                     <li>
                         <span><strong>Şüphelendiğiniz mesajları ailenizdeki diğer kişilerle paylaşın.</strong> Birlikte farkındalık yaratın.</span>
@@ -451,7 +567,7 @@
 
         <div class="footer">
             <p>💙 Sevdiklerinizi korumak için bu sayfayı paylaşın</p>
-            <p style="margin-top: 10px; font-size: 12px;">Güvenliğiniz bizim için önemli - Bilinçli olun, güvende kalın</p>
+            <p>Güvenliğiniz bizim için önemli • Bilinçli olun, güvende kalın</p>
         </div>
     </div>
 
